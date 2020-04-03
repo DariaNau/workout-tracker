@@ -10,7 +10,7 @@ async function initWorkout() {
       date: formatDate(lastWorkout.day),
       totalDuration: lastWorkout.totalDuration,
       numExercises: lastWorkout.exercises.length,
-      ...tallyExercises(lastWorkout.exercises)
+      ...tallyExercises(lastWorkout.exercises)      
     };
 
     renderWorkoutSummary(workoutSummary);
@@ -31,6 +31,15 @@ function tallyExercises(exercises) {
     return acc;
   }, {});
   return tallied;
+
+  // var tallied = { totaldistace: 0 };
+  // for(var i = 0; i < exercises.length; i++){
+  //   if(exercises[i].type === "cardio"){
+  //     tallied.totaldistance += exercises.distance
+  //   }
+  // }
+
+  // return tallied 
 }
 
 function formatDate(date) {

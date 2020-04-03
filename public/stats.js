@@ -187,15 +187,23 @@ function populateChart(data) {
 }
 
 function duration(data) {
-  let durations = [];
+ // let durations = [];
+  let realDurations = [];
+  for(var i = 0; i < 7; i++){
+    realDurations[i] = 0
+  }
 
   data.forEach(workout => {
+    var day = new Date(workout.day).getDay();
+    console.log(day)
+
     workout.exercises.forEach(exercise => {
-      durations.push(exercise.duration);
+     // durations.push(exercise.duration);
+      realDurations[day] += exercise.duration
     });
   });
-
-  return durations;
+  return realDurations
+ // return durations;
 }
 
 function calculateTotalWeight(data) {
