@@ -4,7 +4,7 @@ const db = require('../../../models');
 router.get("/", function (req, res) {
     db.Workout.find({})
         .then(function (data) {
-            console.log(data)
+            // console.log(data)
             res.json(data)
         })
         .catch(function (err) {
@@ -32,7 +32,7 @@ router.put("/:id", function (req, res) {
             new: true
         })
         .then(function (data) {
-            console.log("new exercise---------------------", data)
+            // console.log("new exercise---------------------", data)
             res.json(data)
         })
         .catch(function (err) {
@@ -43,7 +43,7 @@ router.put("/:id", function (req, res) {
 router.post("/", function (req, res) {
     db.Workout.create({})
         .then(function (data) {
-            console.log("new workout...................", data)
+            // console.log("new workout...................", data)
             res.json(data)
         })
         .catch(function (err) {
@@ -55,7 +55,7 @@ router.get("/range", function (req, res) {
     db.Workout.find({})
         .then(function (data) {
             res.json(data)
-            console.log("gtting range...................", data)
+            // console.log("gtting range...................", data)
         })
         .catch(function (err) {
             console.log(err)
